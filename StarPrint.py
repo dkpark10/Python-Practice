@@ -9,7 +9,6 @@ for i in range(5):
     print()
 print()
 
-
 # *
 # **
 # ***
@@ -20,7 +19,6 @@ for i in range(5):
         print("*",end="")
     print()
 print()
-
 
 # *****
 # ****
@@ -58,11 +56,19 @@ for i in range(5):
         print("*",end="")
     print()
 
+# *
+#  *
+#   *
+#    *
+#     *
+for i in range(5):
+    for j in range(i+1-1):
+        print(" ",end="")
+    for j in range(1):
+        print("*",end="")
+    print()
 
 # pyramid
-#   *
-#  ***
-# *****
 num = int(input())
 for i in range(num):
     for j in range(num-1-i):
@@ -70,6 +76,6 @@ for i in range(num):
     for j in range(i*2+1):
         print("*",end="")
     print()
-
+print()
 
 
