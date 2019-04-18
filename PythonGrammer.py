@@ -1,3 +1,4 @@
+import random
 # is, not, in, del, and, or
 
 print("test")
@@ -384,3 +385,82 @@ i=0 # initail sentence
 while i < 3: # only true
     print("test")
     i+=1
+    
+j=10
+while j > 0: # 반대로 감소시키면서도 가능
+    print("dec")
+    i-=1
+    
+r = random.randrange(1,101) # 랜덤
+
+while True: #랜덤숫자 맞추기
+    n = int(input("입력"))
+    if r>n:
+        print("작음 더 큰 수 입력하셈")
+    elif r<n:
+        print("큼 더 작은 수 입력")
+    else :
+        print("맞춤 숫자는 %d" %r)
+        break 
+       
+dice = [1, 2, 3, 4, 5, 6]
+random.choice(dice) # 주사위 중 무작위 출력
+
+#while 1:    # 0이 아닌 숫자는 True로 취급하여 무한 루프로 동작
+    #print('Hello, world!')
+#while 'Hello':    # 내용이 있는 문자열은 True로 취급하여 무한 루프로 동작
+    #print('Hello, world!')
+    
+#break: 제어흐름 중단 반복문 빠져나옴
+#continue: 제어흐름 유지, 코드 실행만 건너띔
+
+i=100
+while True: 
+    print(i)
+    i+=1
+    if(i==50) #50되면 빠져나온다
+        break 
+        
+for i in range(100):       # 0부터 99까지 증가하면서 100번 반복
+    if i % 2 == 0:         # i를 2로 나누었을 때 나머지가 0면 짝수
+        continue           # 아래 코드를 실행하지 않고 건너뜀 continue 다음 아랫줄만 실행을 안함
+    print(i)
+    
+
+
+    
+#리스트와 튜플 사용하기 
+#append: 요소 하나를 추가
+#extend: 리스트를 연결하여 확장
+#insert: 특정 인덱스에 요소 추가
+
+a = list(range(0,401,100))
+a.append(500) #마지막에 500 추가
+#물론 빈리스트에도 추가가능
+
+aa = list(range(0,401,100))
+aa.append([500,501])
+print(a) #[100,200,300,400,[500,501]] 길이는 4임 
+
+b = list(range(5))
+b.extend([6,7])
+print(b) #0,1,2,3,4,6,7 길이는 7임 extend에 전달된 길이만큼 증가
+
+>>> a = [10, 20, 30]
+>>> a.insert(2, 500)
+>>> a
+[10, 20, 500, 30]
+>>> len(a)
+4
+
+c= list(range(5))
+c.insert(2,99) #insert는 원하는 위치에 삽입
+print(c) # 0,1,99,2,3,4 [2]번째 인덱스에 99 추가 
+
+#insert(0, 요소): 리스트의 맨 처음에 요소를 추가
+#insert(len(리스트), 요소): 리스트 끝에 요소를 추가 이건 append와 같다
+
+#>>> a = [10, 20, 30] 
+#>>> a[1:1] = [500, 600] #요소와 끝을 같게하면 덮어쓰지 않으면서 삽입가능
+#>>> a
+#[10, 500, 600, 20, 30]
