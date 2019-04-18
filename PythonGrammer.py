@@ -1,4 +1,4 @@
-# is, not, in, del
+# is, not, in, del, and, or
 
 print("test")
 print("test"); print("test") # many sentence in oneline so take a semicolon
