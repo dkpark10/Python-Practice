@@ -230,7 +230,7 @@ aaa= list(r[:7:2]); print(aaa) # 0,2,4,6
 # a=(0,0,0,0,0) => tuple can't allocation
 # aa=range(0,10,2) => range can't allocation
 # aaa= "fuck you" => str can't allocation
-# thus tuple, range, str only read
+# thus tuple, range, str only can read not write 값변경 불가 
 
 
 
