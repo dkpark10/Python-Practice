@@ -539,3 +539,28 @@ strl = list(map(str,range(0,5+1))) # 스트링으로 변환
 test= map(int,input().split()) # 띄어쓰기로 구분해 정수 받기
 test= list(map(int,input().split())) # 정수받고 리스트로 생성
 print(type(test)) #list 
+
+import time
+import keyword
+import sys
+
+print(keyword.kwlist) # 파이썬 예약어 출력
+
+twodemension = [ #2차원리스트
+                [10, 20],
+                [30, 40],
+                [50, 60]]
+print(twodemension[1][0]) # 2차원배열처럼 [][] 대괄호 2개로 접근
+
+#2차원 리스트의 여러가지 출력방법
+for first,last in twodemension:
+    print('(',first+last,')')
+    print(first,last) #2차원 리스트 출력 이건 가로 길이가 맞아야 함
+
+for i in twodemension:
+    for j in i:
+        print(j, end=" ")
+print()
+for i in range(len(twodemension)):
+    for j in range(len(twodemension[i])):
+        print(twodemension[i][j],end=" ")
