@@ -69,7 +69,7 @@ print('fuck','you',sep=' the ') # fuck the you
 
 print(1,2,3,sep='\n') # \n next line
 
-print(4,end='') # end is many line show one line
+print(4,end='') # end is many lines show one line
 print(5,end='')
 print(6)
 
@@ -252,8 +252,8 @@ print(b)
 
 # dictionary
 # dictionary = {'key1':value1, 'key2':value2}
-# key = int, float, bool but list, dictionary can't
-# value = all type ex)int, float, bool, class, list, ditionary
+# key = int, float, str, bool but list, dictionary can't
+# value = all type ex)int, float, str, bool, class, list, ditionary
 
 powerlifter={'bench press':120,'squart':210,'deadlift':230}
 
@@ -427,9 +427,8 @@ for i in range(100):       # 0부터 99까지 증가하면서 100번 반복
     print(i)
     
 
-
     
-#리스트와 튜플 사용하기 
+#리스트와 튜플 응용하고 사용하기
 #append: 요소 하나를 추가
 #extend: 리스트를 연결하여 확장
 #insert: 특정 인덱스에 요소 추가
@@ -457,10 +456,86 @@ c= list(range(5))
 c.insert(2,99) #insert는 원하는 위치에 삽입
 print(c) # 0,1,99,2,3,4 [2]번째 인덱스에 99 추가 
 
-#insert(0, 요소): 리스트의 맨 처음에 요소를 추가
+#insert(0, 요소): 리스트의 맨 처음에 요소를 추가 insert는 요소 하나만 추가한다. 
 #insert(len(리스트), 요소): 리스트 끝에 요소를 추가 이건 append와 같다
 
-#>>> a = [10, 20, 30] 
+#>>> a = [10, 20, 30] #리스트 중간에 여려 요소를 삽입하고 싶다면
 #>>> a[1:1] = [500, 600] #요소와 끝을 같게하면 덮어쓰지 않으면서 삽입가능
 #>>> a
 #[10, 500, 600, 20, 30]
+
+
+
+l=list(range(1,5+1))
+l.pop() # pop()은 마지막 요소삭제후 반환
+print(l) # 1,2,3,4
+
+l.pop(1) #원하는 인덱스 삭제 pop(0)은 맨처음
+print(l) # 1,3,4
+# pop 대신 del 사용해도 가능
+
+l.remove(3) # 인덱스가 아닌 값을 찾아 삭제 중복이 있다면 처음 찾은 값만 삭제
+l.insert(1,4)
+
+l.index(4) # 값의 인덱스 구하기 가장 첨 찾은 인덱스를 구한다 튜플도 마찬가지
+l.count(4) # 값이 몇개있는지 구함 튜플도 마찬가지로 같이씀
+l.reverse() # 뒤집음
+
+l.sort() # 오름차순 sort 와 sorted 둘의 차이 전자는 정렬 후자는 새 리스트 생성
+l.sort(reverse=True) # 내림차순
+
+l.clear() # 모든요소삭제 빈리스트
+del l[:] #요것도 모든요소삭제
+
+# 메서드를 사용하지않고 슬라이스로 조작가능
+l=list(range(1,5+1))
+l[len(l):]=[500,600]
+print(l)
+
+# 리스트가 비어있는지 확인
+ll=list(range(1,5+1))
+ll.clear()
+
+if not ll:
+    print("리스트가 비어 있으면 트루")
+if ll:
+    print("리스트에 내용이 있으면 트루")
+
+a= list(range(1,5+1))
+b=a # 둘은 같은 객체 새로생성된게 아님 얕은복사
+print(a is b) # 트루 ~
+b[2]='tetetest'
+print(a,b) # 값을 변경하면 둘다 변함 공유
+b=a.copy() # 깊은복사
+print(a is b) # 객체다름 ~
+
+t1=tuple(range(1,5+1))
+t2=tuple(range(6,10+1))
+t3=t1+t2
+#반복문으로 리스트 출력 인덱스랑 값
+for i,value in enumerate(t3): #enumerate를 씀
+    print(i,value)
+
+# 큰값 작은값 구하기
+# max, min 쓰거나 소트해서 0번쨰 찾거나 직접 짜거나 튜플도 사용가능
+print(max(t3))
+print(min(t3))
+print(sum(t3)) # 합계 출력
+
+# 리스트표현식 
+l = [i for i in range(10) if i % 2 == 0]    # 0~9 숫자 중 2의 배수인 숫자(짝수)로 리스트 생성 튜플도 사용가능
+
+gugudan = [i * j for j in range(2, 10)
+           for i in range(1, 10)] # 반복문 여러개 써도 가능
+
+
+# map은 리스트의 요소를 지정된 함수로 처리해주는 함수
+# map은 원본 리스트를 변경하지 않고 새 리스트를 생성
+
+floatl = [1.2, 2.5, 3.7, 4.6] #실수 정수 변환
+intl = list(map(int, floatl))
+strl = list(map(str,range(0,5+1))) # 스트링으로 변환
+
+test= map(int,input().split()) # 띄어쓰기로 구분해 정수 받기
+test= list(map(int,input().split())) # 정수받고 리스트로 생성
+print(type(test)) #list 
