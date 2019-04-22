@@ -565,3 +565,118 @@ print()
 for i in range(len(twodemension)):
     for j in range(len(twodemension[i])):
         print(twodemension[i][j],end=" ")
+        
+        
+        
+# 리스트 응용하기    
+import copy
+
+l=[]
+for i in range(10): # 반복문으로 1차원 리스트 생성
+    l.append((0))
+
+twodemension=[]
+for i in range(3): # 반복문으로 2차원 리스트 생성
+    line=[]
+    for j in range(2):
+        line.append(0)
+    twodemension.append(line)
+
+l=[[0 for j in range(2)] for i in range(3)] # 리스트표현식으로 2차원 리스트생성
+
+# 가변길이 리스트 만들기
+a=[3,1,2,4,5]
+l=[]
+
+for i in a:
+    line=[]
+    for j in range(i):
+        line.append(0)
+    l.append(line)
+# [[0, 0, 0], [0], [0, 0], [0, 0, 0, 0], [0, 0, 0, 0, 0]]
+
+li = [[0] * i for i in [3, 1, 3, 2, 5]] # 리스트표현식
+# 2차원 리스트의 깊은복사
+aa=[[2*j for j in range(2)]for i in range(3)]
+bb=copy.deepcopy(aa)
+bb[0][0]= 5000
+
+
+
+
+# 문자열 다루기
+str="aaa bbb ccc"
+str=str.replace("aaa","sss") # sss bbb ccc
+
+# 문자바꾸기 (?)
+table= str.maketrans('aeiou','12345')
+'apples'.translate(table)
+print(table)
+pass
+
+# 문자열 분리하기
+string="apple banana cherry democracy earth"
+string= string.split()  # 스페이스, 탭, 엔터기준으로 문자열 나눠줌
+print(string)
+# 괄호에 값 넣어주면 그 값 기준으로 나눠서 리스트 생성
+
+
+# 문자열 연결하기
+# string = ' '.join(string) # 리스트를 하나의 문자열로
+# print(string)
+
+string = '-'.join(string) # 각 인덱스요소 사이 마이너스로 연결
+print(string)
+
+# 대소문자 변환
+rich="rich man".upper(); print(rich) # 대문자로
+rich="rich man".lower(); print(rich) # 소문자로
+
+# 공백삭제
+strtest="   Snake"
+print(strtest.lstrip()) # 왼쪽 공백 삭제
+strtest="   Snake    "
+print(strtest.rstrip()) # 오른쪽 공백 삭제
+strtest="   Snake    "
+print(strtest.strip()) # 양쪽 공백 삭제
+#공백삭제 함수안에 특정 문자를 넣으면 삭제한다
+
+import string
+# 구두점 삭제 방법
+
+gudu= "$&/+ SNAKE^^~~"
+print(gudu.strip(string.punctuation))
+# '!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~'
+
+# 문자열 정렬
+strsort="LION"
+strsort.ljust(10) # 지정된 길이로 만든위 왼쪽으로 정렬 남는공간을 공백으로
+print(strsort) # L I O N □ □ □ □ □ □
+strsort.rjust(10) # □ □ □ □ □ □ L I O N # 오른쪽 정렬
+
+strsort.center(10) # □ □ □ L I O N □ □ □ # 센터정렬
+
+# 메서드 체이닝 메서드를 연속해서 호출 그렙과 파이프라인같은거라 보면 됨
+str="snake"
+str.rjust(10).upper() # 오른정렬하고 대문자로
+
+# 문자열 왼쪽에 0 채우기
+# zfill (zero fill)
+print('35'.zfill(4)) # 0035
+print('3.5'.zfill(6)) # 0003.5
+print('Fuck'.zfill(8)) # 0000Fuck
+
+# 문자열 찾기
+fruits="banana watermelon"
+print(fruits.find('na')) # 찾은 문자열의 인덱스 반환
+print(fruits.rindex('na')) # 오른쪽부터 찾음
+print(fruits.count('na')) # 문자열 몇개 나오는지 카운트
+
+# 문자열 포매팅
+bench =150
+deadlift = 20
+squart = 6700
+print("내 3대 무게는 벤치: {} 데드: {} 스쾃:{}입니다.".format(bench,deadlift,squart))
+
+
+
