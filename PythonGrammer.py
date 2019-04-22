@@ -1,4 +1,5 @@
 import random
+import copy
 # is, not, in, del, and, or
 
 print("test")
@@ -506,7 +507,7 @@ b=a # 둘은 같은 객체 새로생성된게 아님 얕은복사
 print(a is b) # 트루 ~
 b[2]='tetetest'
 print(a,b) # 값을 변경하면 둘다 변함 공유
-b=a.copy() # 깊은복사
+b=a.copy() # 깊은복사 copy메서드는 리스트로 변수불가
 print(a is b) # 객체다름 ~
 
 t1=tuple(range(1,5+1))
