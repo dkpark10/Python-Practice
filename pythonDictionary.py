@@ -37,4 +37,7 @@ powerlifter.setdefault('back extension',2000) # 키 값 쌍으로 추가
 #굳이 이렇게 쓸 필요는 없을듯..
 
 # 키의 값 수정
-powerlifter.update(deadlift=8700, squart=21) # 여러개 수정
+powerlifter.update(deadlift=8700, squart=21) # 여러개 수정 키값이 문자열일 때만 update(key = value)
+intdic={1:'one',2:'two'}
+intdic.update({1:'ONE',2:'TWO'}) # 키값이 인티져일 때 수정 딕셔너리처럼
+print(intdic)
