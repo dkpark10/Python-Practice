@@ -7,7 +7,7 @@ with는 파일처리에 관한 것 </br>
 
 파일을 열었으면 닫는 작업을 항상 해야 한다. </br>
 with as 는 자동으로 마무리 해줌 ~~ </br>
-내부적으로 **__exit__()**, **__enter__()**가 구현이 되있다. </br>
+내부적으로 __exit__(), __enter__()가 구현이 되있다. </br>
 
 ```python
 with open('output.txt', 'w') as f:
